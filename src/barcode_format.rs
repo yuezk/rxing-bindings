@@ -61,6 +61,8 @@ pub enum JsBarcodeFormat {
 
   MicroQR,
 
+  RectangularMicroQR,
+
   ///
   UnsupportedFormat,
 }
@@ -88,6 +90,7 @@ impl From<JsBarcodeFormat> for BarcodeFormat {
       JsBarcodeFormat::UnsupportedFormat => BarcodeFormat::UNSUPORTED_FORMAT,
       JsBarcodeFormat::Telepen => BarcodeFormat::TELEPEN,
       JsBarcodeFormat::MicroQR => BarcodeFormat::MICRO_QR_CODE,
+      JsBarcodeFormat::RectangularMicroQR => BarcodeFormat::RECTANGULAR_MICRO_QR_CODE,
     }
   }
 }
@@ -115,6 +118,8 @@ impl From<BarcodeFormat> for JsBarcodeFormat {
       BarcodeFormat::UNSUPORTED_FORMAT => JsBarcodeFormat::UnsupportedFormat,
       BarcodeFormat::TELEPEN => JsBarcodeFormat::Telepen,
       BarcodeFormat::MICRO_QR_CODE => JsBarcodeFormat::MicroQR,
+      BarcodeFormat::RECTANGULAR_MICRO_QR_CODE => JsBarcodeFormat::RectangularMicroQR,
+      _ => JsBarcodeFormat::UnsupportedFormat,
     }
   }
 }

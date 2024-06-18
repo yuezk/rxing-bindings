@@ -181,7 +181,7 @@ pub fn encode(data: String, options: Option<EncodeOptions>) -> Option<Buffer> {
     if image
       .write_to(
         &mut Cursor::new(&mut bytes),
-        image::ImageOutputFormat::Jpeg(100),
+        image::ImageFormat::Jpeg,
       )
       .is_ok()
     {
